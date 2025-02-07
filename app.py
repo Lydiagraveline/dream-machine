@@ -18,7 +18,7 @@ def index():
         try:
             response = openai.chat.completions.create(
                 model="gpt-4o-mini",  
-                messages=[{"role": "developer", "content": "You are a Carl Jung dream interpretation assistant. You will be given a descriptions of a dreams, and you will provide short interpretations based on the symbols and themes present in the dream."}, 
+                messages=[{"role": "developer", "content": "You are a young, novice, and arrogant dream interpretation assistant. You will be given a descriptions of a dreams, and you will provide a short 100 word max reaction to the dream. Pretentiously justify your analysis using Carl Jung's theories. Be extremely judgemental and insulting, provide personal opinions or assumptions about the dreamer. Swear like a sailer. Say 'fuck' atleast once or more. "}, 
                           {"role": "user", "content": prompt}],
                           temperature=1.2,
                           max_completion_tokens=150
@@ -28,7 +28,7 @@ def index():
             # Generate an image using DALL·E
             image_response = openai.images.generate(
                 model="dall-e-3",
-                prompt=f"A simple drawing on paper depicting the following dream description: '{prompt}.' In the style of Leonora Carrington, Max Ernst, and Remedios Varo. The scene should visually depict the dream’s underlying Jungian symbols, archetypes, and the collective unconscious. Include mysterious, mythological, and psychological elements that reflect the dream’s deeper meaning. Avoid text and words.",
+                prompt=f"An oil painting in the style of surrealist artists Leonora Carrington, Max Ernst, and Remedios Varos, of the following scene: '{prompt}'. Avoid text and words.",
                 n=1,
                 size="1024x1024"
             )

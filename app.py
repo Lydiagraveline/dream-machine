@@ -12,6 +12,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")  # Securely load API key
 def index():
     result = None
     image_url = None  # To store the generated image URL
+    prompt = ""  # Initialize prompt to an empty string
     if request.method == "POST":
         prompt = request.form["prompt"]
         
@@ -29,6 +30,7 @@ def index():
             image_response = openai.images.generate(
                 model="dall-e-3",
                 prompt=f"An oil painting in the style of surrealist artists Leonora Carrington, Max Ernst, and Remedios Varos, of the following scene: '{prompt}'. Avoid text and words.",
+                #  prompt=f"A black and white photograph of the following description of a dream: '{prompt}'.",
                 n=1,
                 size="1024x1024"
             )
@@ -37,7 +39,7 @@ def index():
        
         except Exception as e:
             result = f"Error: {str(e)}"
-    return render_template("index.html", result=result, image_url=image_url,)
+    return render_template("index.html", result=result, image_url=image_url, prompt=prompt)
 
 if __name__ == "__main__":
     app.run(debug=True)  # Run locally for testing

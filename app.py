@@ -29,7 +29,7 @@ def index():
             # Generate an image using DALL·E
             image_response = openai.images.generate(
                 model="dall-e-3",
-                prompt=f"An oil painting in the style of surrealist artists Leonora Carrington, Max Ernst, and Remedios Varos, of the following scene: '{prompt}'. Avoid text and words.",
+                prompt=f"An oil painting in the style of surrealist artists Leonora Carrington, Max Ernst, and Remedios Varos, depicting the following scene: '{prompt}'. Avoid text and words.",
                 #  prompt=f"A black and white photograph of the following description of a dream: '{prompt}'.",
                 n=1,
                 size="1024x1024"

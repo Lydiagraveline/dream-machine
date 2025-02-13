@@ -1,7 +1,12 @@
-# minimal-flask-app
-Minimal code for Flask app making calls to the OpenAI API
+User guide for the web app:
+Input: Type a description of your dream into the text area
+Output: An analysis of the images and symbols of your dream based on Carl Jung's theories by a novice dream interpretation AI assistant, don't take it too personal. As well as a generated image of your dream. 
 
 
+
+
+
+Guide: 
 ```
 # Create virtual environment
 python3 -m venv ./venv
